@@ -24,15 +24,21 @@ export default function AuthInputs() {
     <div id="auth-inputs">
       <div className="controls">
         <p>
-          <label>Email</label>
+          <label className={`label ${emailNotValid ? 'invalid' : ''}`}>Email</label>
           <input
             type="email"
             className={emailNotValid ? 'invalid' : undefined}
+            // style={{
+            //   color: emailNotValid ? '#ef4444' : '#374151',
+            //   borderColor: emailNotValid ? '#f73f3f' : 'transparent',
+            //   backgroundColor: consoleLog(emailNotValid) ? '#fed2d2' : '#d1d5db',
+            // }}
+
             onChange={(event) => handleInputChange('email', event.target.value)}
           />
         </p>
         <p>
-          <label>Password</label>
+          <label className={`label ${emailNotValid ? 'invalid' : ''}`}>Password</label>
           <input
             type="password"
             className={passwordNotValid ? 'invalid' : undefined}
@@ -51,3 +57,4 @@ export default function AuthInputs() {
     </div>
   );
 }
+
